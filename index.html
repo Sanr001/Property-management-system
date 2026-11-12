@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN PAGE -->
+    <section id="loginPage" class="login-page">
+        <div class="login-card">
+            <h1>TenantHub</h1>
+            <p>PROPERTY MANAGEMENT SYSTEM</p>
+
+            <h2>Welcome Back</h2>
+            <p>Sign in to manage your properties</p>
+
+            <form id="loginForm">
+                <label>Email Address</label>
+                <input type="email" id="email"
+                       placeholder="owner@example.com" required>
+
+                <label>Password</label>
+                <input type="password" id="password"
+                       placeholder="Enter password" required>
+
+                <button type="submit" class="primary-btn">
+                    Sign In
+                </button>
+            </form>
+
+            <p class="login-note">
+                Demo: enter any valid email and password.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- MAIN APPLICATION -->
+    <div id="app" class="app-container hidden">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>TenantHub</h2>
+                <p>PROPERTY MANAGEMENT</p>
+            </div>
+
+            <nav class="navigation">
+
+                <button class="nav-link active" data-page="dashboard">
+                    <span>▦</span> Dashboard
+                </button>
+
+                <button class="nav-link" data-page="properties">
+                    <span>⌂</span> Properties
+                </button>
+
+                <button class="nav-link" data-page="tenants">
+                    <span>♙</span> Tenants
+                </button>
+
+                <button class="nav-link" data-page="tenancies">
+                    <span>▤</span> Tenancies
+                </button>
+
+                <button class="nav-link" data-page="payments">
+                    <span>৳</span> Payments
+                </button>
+
+                <button class="nav-link" data-page="maintenance">
+                    <span>⚒</span> Maintenance
+                </button>
+
+                <button class="nav-link" data-page="notices">
+                    <span>▧</span> Notices
+                </button>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="owner-info">
+                    <div class="avatar">O</div>
+                    <div>
+                        <strong>Property Owner</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+
+                <button id="logoutBtn" class="logout-btn">
+                    ↪ Logout
+                </button>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h3 id="topbarTitle">Dashboard</h3>
+                </div>
+
+                <div class="topbar-right">
+                    <input type="text" placeholder="Search...">
+                    <div class="avatar">O</div>
+                </div>
+
+            </header>
+
+
+            <!-- DASHBOARD -->
+            <section class="page active" id="dashboard">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Welcome back! Here's your property overview.</p>
+                    </div>
+                    <button class="primary-btn" data-go="payments">
+                        + Record Payment
+                    </button>
+                </div>
+
+                <div class="dashboard-cards">
+
+                    <div class="stat-card">
+                        <p>Total Properties</p>
+                        <h2>08</h2>
+                        <small>Registered properties</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Total Tenants</p>
+                        <h2>42</h2>
+                        <small>Active tenants</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Rent Collected</p>
+                        <h2>Tk85,000</h2>
+                        <small>This month</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Outstanding Rent</p>
+                        <h2>Tk15,000</h2>
+                        <small>Pending payments</small>
+                    </div>
+
+                </div>
+
+                <div class="content-card">
+                    <h2>Recent Activities</h2>
+                    <p>No recent activities to display.</p>
+                </div>
+
+            </section>
+
+
+            <!-- PROPERTIES -->
+            <section class="page" id="properties">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Properties</h1>
+                        <p>Manage your buildings and rental units.</p>
+                    </div>
+                    <button class="primary-btn">+ Add Property</button>
+                </div>
+
+                <div class="content-card">
+                    <h2>My Properties</h2>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Property Name</th>
+                                    <th>Location</th>
+                                    <th>Total Units</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Green View Apartment</td>
+                                    <td>Dhaka</td>
+                                    <td>12</td>
+                                    <td><span class="status active-status">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Lake View Residence</td>
+                                    <td>Uttara</td>
+                                    <td>10</td>
+                                    <td><span class="status active-status">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- TENANTS -->
+            <section class="page" id="tenants">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Tenants</h1>
+                        <p>Manage your tenant information.</p>
+                    </div>
+                    <button class="primary-btn">+ Add Tenant</button>
+                </div>
+
+                <div class="content-card">
+                    <h2>Tenant List</h2>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Property</th>
+                                    <th>Monthly Rent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rahim Ahmed</td>
+                                    <td>017XXXXXXXX</td>
+                                    <td>Green View</td>
+                                    <td>Tk 15,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Karim Hasan</td>
+                                    <td>018XXXXXXXX</td>
+                                    <td>Lake View</td>
+                                    <td>Tk 18,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- TENANCIES -->
+            <section class="page" id="tenancies">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Tenancies</h1>
+                        <p>Manage rental agreements and tenancy periods.</p>
+                    </div>
+                    <button class="primary-btn">+ New Tenancy</button>
+                </div>
+
+                <div class="content-card">
+                    <h2>Tenancy Records</h2>
+                    <p>No tenancy records added yet.</p>
+                </div>
+
+            </section>
+
+
+            <!-- PAYMENTS -->
+            <section class="page" id="payments">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Payments</h1>
+                        <p>Track rent payments and outstanding balances.</p>
+                    </div>
+                    <button class="primary-btn">+ Record Payment</button>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="stat-card">
+                        <p>Total Collected</p>
+                        <h2>Tk 85,000</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Pending</p>
+                        <h2>Tk 15,000</h2>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>Payment History</h2>
+                    <p>No additional payment records available.</p>
+                </div>
+
+            </section>
+
+
+            <!-- MAINTENANCE -->
+            <section class="page" id="maintenance">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Maintenance</h1>
+                        <p>Manage tenant maintenance requests.</p>
+                    </div>
+                    <button class="primary-btn">+ Add Request</button>
+                </div>
+
+                <div class="content-card">
+                    <h2>Maintenance Requests</h2>
+                    <p>No maintenance requests available.</p>
+                </div>
+
+            </section>
+
+
+            <!-- NOTICES -->
+            <section class="page" id="notices">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Notices</h1>
+                        <p>Send announcements and updates to tenants.</p>
+                    </div>
+                    <button class="primary-btn">+ Create Notice</button>
+                </div>
+
+                <div class="content-card">
+                    <h2>Announcements</h2>
+                    <p>No notices published yet.</p>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
